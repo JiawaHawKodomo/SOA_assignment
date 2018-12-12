@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jw.nju.edu.cn/schema"
+        xmlns:tns="http://jw.nju.edu.cn/schema"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Department.xsd"/>
+    <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
+
+    <element name="个人信息" type="tns:个人信息类型"/>
+
+    <complexType name="个人信息类型">
+        <all>
+            <element name="姓名" type="tns:姓名类型"/>
+            <element name="性别" type="tns:性别类型"/>
+            <element name="身份证号" type="tns:身份证号类型"/>
+            <element name="出生日期" type="date"/>
+            <element name="所属部门" type="tns:部门类型" minOccurs="0"/>
+        </all>
+    </complexType>
+
+    <simpleType name="姓名类型">
+        <restriction base="string">
+        </restriction>
+    </simpleType>
+
+    <simpleType name="性别类型">
+        <restriction base="string">
+            <enumeration value="男"/>
+            <enumeration value="女"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="身份证号类型">
+        <restriction base="string">
+            <pattern value="[0-9]{18}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="专业类型">
+        <restriction base="string">
+            <minLength value="1"/>
+        </restriction>
+    </simpleType>
+</schema>
