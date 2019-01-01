@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://jw.nju.edu.cn/schema/course"
-	xmlns:tns="http://jw.nju.edu.cn/schema"
+	xmlns:tns="http://jw.nju.edu.cn/schema/course"
 	elementFormDefault="qualified">
 
   <element name="课程" type="tns:课程类型"/>

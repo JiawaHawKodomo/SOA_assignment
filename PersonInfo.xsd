@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://jw.nju.edu.cn/schema"
-        xmlns:tns="http://jw.nju.edu.cn/schema"
+        targetNamespace="http://jw.nju.edu.cn/schema/personinfo"
+        xmlns:tns="http://jw.nju.edu.cn/schema/personinfo"
         elementFormDefault="qualified">
 
     <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Department.xsd"/>

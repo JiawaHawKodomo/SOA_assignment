@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://jw.nju.edu.cn/schema"
+<schema targetNamespace="http://jw.nju.edu.cn/schema/studentid"
         elementFormDefault="qualified"
-        xmlns="http://www.w3.org/2001/XMLSchema">
+        xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://jw.nju.edu.cn/schema/studentid">
 
 
     <simpleType name="学号类型">
