@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<description xmlns="http://www.w3.org/ns/wsdl"
+             targetNamespace="http://jw.nju.edu.cn/wsdl"
+             xmlns:score="http://jw.nju.edu.cn/schema/scorelist"
+             xmlns:sid="http://jw.nju.edu.cn/schema/studentid"
+             xmlns:course="http://jw.nju.edu.cn/schema/course">
+
+    <types xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:import namespace="http://jw.nju.edu.cn/schema/scorelist"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/ScoreList.xsd"/>
+        <xs:import namespace="http://jw.nju.edu.cn/schema/studentid"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
+        <xs:import namespace="http://jw.nju.edu.cn/schema/course"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Course.xsd"/>
+    </types>
+
+    <interface name="errors">
+        <fault name="studentIdFault" element="sid:学号错误">
+            <documentation>学号格式错误</documentation>
+        </fault>
+        <fault name="scoreFault" element="score:得分错误">
+            <documentation>得分格式错误</documentation>
+        </fault>
+        <fault name="scoreTypeFault" element="score:成绩类型错误">
+            <documentation>成绩类型不符合枚举类型</documentation>
+        </fault>
+        <fault name="courseTypeFault" element="course:课程编号错误">
+            <documentation>课程编号不存在或编号格式错误</documentation>
+        </fault>
+    </interface>
+</description>
