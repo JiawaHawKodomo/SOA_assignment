@@ -48,4 +48,19 @@
             <maxInclusive value="100"/>
         </restriction>
     </simpleType>
+
+    <element name="得分错误" type="tns:得分错误类型"/>
+    <simpleType name="得分错误类型">
+        <restriction base="string">
+            <enumeration value="得分必须是一个整数"/>
+            <enumeration value="得分区间必须是0-100"/>
+        </restriction>
+    </simpleType>
+
+    <element name="成绩类型错误" type="tns:成绩类型错误类型"/>
+    <simpleType name="成绩类型错误类型">
+        <restriction base="string">
+            <enumeration value="成绩类型必须是平时成绩, 作业成绩, 期中成绩, 期末成绩, 总评成绩中的一种"/>
+        </restriction>
+    </simpleType>
 </schema>
