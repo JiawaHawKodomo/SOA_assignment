@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:学生 xmlns="http://jw.nju.edu.cn/schema/personinfo" xmlns:ns2="http://jw.nju.edu.cn/schema/department" xmlns:ns3="http://jw.nju.edu.cn/schema/student" xmlns:ns4="http://jw.nju.edu.cn/schema/scorelist">
+    <ns3:基本信息>
+        <姓名>刘铭锴</姓名>
+        <性别>男</性别>
+        <身份证号>111111111111111111</身份证号>
+        <出生日期>2019-03-12T15:54:07.549+08:00</出生日期>
+        <所属部门>
+            <ns2:部门编号>250</ns2:部门编号>
+            <ns2:部门名称>软件工程</ns2:部门名称>
+            <ns2:上级部门>
+                <ns2:部门编号>250</ns2:部门编号>
+                <ns2:部门名称>软件学院</ns2:部门名称>
+                <ns2:部门类型>院系部门</ns2:部门类型>
+            </ns2:上级部门>
+            <ns2:部门类型>专业</ns2:部门类型>
+        </所属部门>
+    </ns3:基本信息>
+    <ns3:学号>161250074</ns3:学号>
+    <ns3:入学年级>2016</ns3:入学年级>
+</ns3:学生>
