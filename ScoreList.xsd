@@ -2,6 +2,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://jw.nju.edu.cn/schema/scorelist"
         xmlns:tns="http://jw.nju.edu.cn/schema/scorelist"
+		xmlns:course="http://jw.nju.edu.cn/schema/course"
         elementFormDefault="qualified">
 
     <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Course.xsd"/>
@@ -31,7 +32,7 @@
 
             </element>
         </sequence>
-        <attribute name="课程编号" type="tns:课程编号类型"/>
+        <attribute name="课程编号" type="course:课程编号类型"/>
         <attribute name="成绩性质" type="tns:成绩性质类型"/>
     </complexType>
 
@@ -61,6 +62,13 @@
     <simpleType name="成绩类型错误类型">
         <restriction base="string">
             <enumeration value="成绩类型必须是平时成绩, 作业成绩, 期中成绩, 期末成绩, 总评成绩中的一种"/>
+        </restriction>
+    </simpleType>
+
+    <element name="成绩不存在错误" type="tns:成绩不存在错误类型"/>
+    <simpleType name="成绩不存在错误类型">
+        <restriction base="string">
+            <enumeration value="该成绩不存在"/>
         </restriction>
     </simpleType>
 </schema>

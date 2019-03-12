@@ -3,7 +3,8 @@
              targetNamespace="http://jw.nju.edu.cn/wsdl/error"
              xmlns:score="http://jw.nju.edu.cn/schema/scorelist"
              xmlns:sid="http://jw.nju.edu.cn/schema/studentid"
-             xmlns:course="http://jw.nju.edu.cn/schema/course">
+             xmlns:course="http://jw.nju.edu.cn/schema/course"
+             xmlns:stu="http://jw.nju.edu.cn/schema/student">
 
     <types xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <xs:import namespace="http://jw.nju.edu.cn/schema/scorelist"
@@ -26,6 +27,18 @@
         </fault>
         <fault name="courseTypeFault" element="course:课程编号错误">
             <documentation>课程编号不存在或编号格式错误</documentation>
+        </fault>
+        <fault name="scoreDoesNotExistFault" element="score:成绩不存在错误">
+            <documentation>该成绩不存在</documentation>
+        </fault>
+        <fault name="studentInfoFault" element="stu:学生信息错误">
+            <documentation>学生信息格式错误</documentation>
+        </fault>
+        <fault name="studentUpdatePermissionFault">
+            <documentation>修改学生信息权限不够</documentation>
+        </fault>
+        <fault name="studentDoesNotExistFault" element="stu:学生不存在错误">
+            <documentation>该学生不存在</documentation>
         </fault>
     </interface>
 </description>

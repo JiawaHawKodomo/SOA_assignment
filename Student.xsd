@@ -19,4 +19,34 @@
         </all>
     </complexType>
 
+    <simpleType name="密码类型">
+        <restriction>
+            <minLength value="8"/>
+            <maxLength value="16"/>
+            <pattern value="[a-zA-Z]+[a-zA-Z0-9]*"/>
+        </restriction>
+    </simpleType>
+
+    <element name="账户认证" type="tns:账户认证类型"/>
+    <complexType name="账户认证类型">
+        <all>
+            <element name="学号" type="tns:学号类型"/>
+            <element name="密码" type="tns:密码类型"/>
+        </all>
+    </complexType>
+
+    <element name="账户认证结果" type="tns:账户认证结果类型"/>
+    <simpleType name="账户认证结果类型">
+        <restriction base="boolean"/>
+    </simpleType>
+
+    <element name="学生信息错误" type="tns:学生信息错误类型"/>
+    <simpleType name="学生信息错误类型">
+        <restriction base="string"/>
+    </simpleType>
+
+    <element name="学生不存在错误" type="tns:学生不存在错误类型"/>
+    <simpleType name="学生不存在错误类型">
+        <restriction base="string"/>
+    </simpleType>
 </schema>
