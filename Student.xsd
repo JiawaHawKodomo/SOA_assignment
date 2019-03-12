@@ -33,7 +33,7 @@
     <element name="账户认证" type="tns:账户认证类型"/>
     <complexType name="账户认证类型">
         <all>
-            <element name="学号" type="tns:学号类型"/>
+            <element name="学号" type="sid:学号类型"/>
             <element name="密码" type="tns:密码类型"/>
         </all>
     </complexType>
