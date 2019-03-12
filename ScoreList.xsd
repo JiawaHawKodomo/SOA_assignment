@@ -3,10 +3,12 @@
         targetNamespace="http://jw.nju.edu.cn/schema/scorelist"
         xmlns:tns="http://jw.nju.edu.cn/schema/scorelist"
 		xmlns:course="http://jw.nju.edu.cn/schema/course"
+		xmlns:sid="http://jw.nju.edu.cn/schema/studentid"
         elementFormDefault="qualified">
 
     <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Course.xsd"/>
     <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/PersonInfo.xsd"/>
+	<include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
 
     <simpleType name="成绩性质类型">
         <restriction base="string">
@@ -38,7 +40,7 @@
 
     <complexType name="成绩类型">
         <sequence>
-            <element name="学号" type="tns:学号类型"/>
+            <element name="学号" type="sid:学号类型"/>
             <element name="得分" type="tns:得分类型"/>
         </sequence>
     </complexType>
