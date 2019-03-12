@@ -18,7 +18,7 @@
             <element name="基本信息" type="person:个人信息类型"/>
             <element name="学号" type="sid:学号类型"/>
             <element name="入学年级" type="unsignedInt"/>
-            <element name="课程成绩列表" type="scolist:课程成绩列表类型"/>
+            <element name="课程成绩列表" type="scolist:课程成绩列表类型" minOccurs="0"/>
         </all>
     </complexType>
 
