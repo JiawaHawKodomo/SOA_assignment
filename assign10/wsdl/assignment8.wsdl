@@ -14,7 +14,7 @@
 
     <!--引用表示errors的wsdl-->
     <import namespace="http://jw.nju.edu.cn/wsdl/error"
-            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/errors.wsdl"/>
+            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/assign10/wsdl/errors8.wsdl"/>
 
     <interface name="studentInterface" extends="error:errors">
         <!--账户认证-->

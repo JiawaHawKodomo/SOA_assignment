@@ -14,7 +14,7 @@
 
     <!--引用表示errors的wsdl-->
     <import namespace="http://jw.nju.edu.cn/wsdl/error"
-            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/errors.wsdl"/>
+            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/assign10/wsdl/errors7.wsdl"/>
 
     <interface name="scoreInterface" extends="error:errors">
         <!--assignment5 查询学生成绩-->
