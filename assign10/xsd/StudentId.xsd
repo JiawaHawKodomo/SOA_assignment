@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://jw.nju.edu.cn/schema/studentid"
+        elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://jw.nju.edu.cn/schema/studentid">
+
+    <element name="学号" type="tns:学号类型"/>
+    <simpleType name="学号类型">
+        <restriction base="string">
+            <pattern value="[0-9]{9}"/>
+        </restriction>
+    </simpleType>
+
+    <element name="学号错误" type="tns:学号错误类型"/>
+    <simpleType name="学号错误类型">
+        <restriction base="string">
+            <enumeration value="student id is invalid"/>
+        </restriction>
+    </simpleType>
+
+</schema>

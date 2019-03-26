@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<description xmlns="http://www.w3.org/ns/wsdl"
+             targetNamespace="http://jw.nju.edu.cn/wsdl/student"
+             xmlns:stu="http://jw.nju.edu.cn/schema/student"
+             xmlns:sid="http://jw.nju.edu.cn/schema/studentid"
+             xmlns:error="http://jw.nju.edu.cn/wsdl/error">
+
+    <types xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:import namespace="http://jw.nju.edu.cn/schema/student"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/Student.xsd"/>
+        <xs:import namespace="http://jw.nju.edu.cn/schema/studentid"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
+    </types>
+
+    <!--引用表示errors的wsdl-->
+    <import namespace="http://jw.nju.edu.cn/wsdl/error"
+            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/errors.wsdl"/>
+
+    <interface name="studentInterface" extends="error:errors">
+        <!--账户认证-->
+        <operation name="loginConfirm"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="stu:账户认证"/>
+            <output messageLabel="Out" element="stu:账户认证结果"/>
+            <outfault ref="error:identificationFailureError" messageLabel="Out"/>
+        </operation>
+
+        <!--查询学生信息-->
+        <operation name="queryStudentInfo"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="sid:学号"/>
+            <output messageLabel="Out" element="stu:学生"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundStudentError" messageLabel="Out"/>
+        </operation>
+
+        <!--修改学生信息-->
+        <operation name="updateStudentInfo"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="stu:学生"/>
+            <output messageLabel="Out" element="stu:学生"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundStudentError" messageLabel="Out"/>
+        </operation>
+
+        <!--创建学生信息-->
+        <operation name="addStudentInfo"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="stu:学生"/>
+            <output messageLabel="Out" element="stu:学生"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:duplicateInsertStudentError" messageLabel="Out"/>
+        </operation>
+
+        <!--删除学生信息-->
+        <operation name="deleteStudentInfo"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="sid:学号"/>
+            <!--output是删除的学生信息-->
+            <output messageLabel="Out" element="stu:学生"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundStudentError" messageLabel="Out"/>
+        </operation>
+    </interface>
+
+</description>

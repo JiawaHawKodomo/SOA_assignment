@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://jw.nju.edu.cn/schema/student"
+        xmlns:tns="http://jw.nju.edu.cn/schema/student"
+        elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema">
+
+    <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/PersonInfo.xsd"/>
+    <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/ScoreList.xsd"/>
+    <include schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
+
+    <element name="学生" type="tns:学生类型"/>
+
+    <complexType name="学生类型">
+        <all>
+            <element name="基本信息" type="tns:个人信息类型"/>
+            <element name="学号" type="tns:学号类型"/>
+            <element name="入学年级" type="unsignedInt"/>
+            <element name="课程成绩列表" type="tns:课程成绩列表类型"/>
+        </all>
+    </complexType>
+
+    <simpleType name="密码类型">
+        <restriction>
+            <minLength value="8"/>
+            <maxLength value="16"/>
+            <pattern value="[a-zA-Z]+[a-zA-Z0-9]*"/>
+        </restriction>
+    </simpleType>
+
+    <element name="账户认证" type="tns:账户认证类型"/>
+    <complexType name="账户认证类型">
+        <all>
+            <element name="学号" type="tns:学号类型"/>
+            <element name="密码" type="tns:密码类型"/>
+        </all>
+    </complexType>
+
+    <element name="账户认证结果" type="tns:账户认证结果类型"/>
+    <simpleType name="账户认证结果类型">
+        <restriction base="boolean"/>
+    </simpleType>
+
+    <element name="学生信息错误" type="tns:学生信息错误类型"/>
+    <simpleType name="学生信息错误类型">
+        <restriction base="string"/>
+    </simpleType>
+
+    <element name="学生不存在错误" type="tns:学生不存在错误类型"/>
+    <simpleType name="学生不存在错误类型">
+        <restriction base="string"/>
+    </simpleType>
+</schema>

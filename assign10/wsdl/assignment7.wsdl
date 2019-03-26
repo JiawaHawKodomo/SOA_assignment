@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<description xmlns="http://www.w3.org/ns/wsdl"
+             targetNamespace="http://jw.nju.edu.cn/wsdl/score"
+             xmlns:score="http://jw.nju.edu.cn/schema/scorelist"
+             xmlns:sid="http://jw.nju.edu.cn/schema/studentid"
+             xmlns:error="http://jw.nju.edu.cn/wsdl/error">
+
+    <types xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:import namespace="http://jw.nju.edu.cn/schema/scorelist"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/ScoreList.xsd"/>
+        <xs:import namespace="http://jw.nju.edu.cn/schema/studentid"
+                   schemaLocation="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/StudentId.xsd"/>
+    </types>
+
+    <!--引用表示errors的wsdl-->
+    <import namespace="http://jw.nju.edu.cn/wsdl/error"
+            location="https://raw.githubusercontent.com/JiawaHawKodomo/SOA_assignment/master/errors.wsdl"/>
+
+    <interface name="scoreInterface" extends="error:errors">
+        <!--assignment5 查询学生成绩-->
+        <operation name="queryStudentScores"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="sid:学号"/>
+            <output messageLabel="Out" element="score:课程成绩列表"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundStudentError" messageLabel="Out"/>
+        </operation>
+
+        <!--assignment6 修改学生成绩-->
+        <operation name="updateStudentScores"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="score:课程成绩列表"/>
+            <output messageLabel="Out" element="score:课程成绩列表"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundScoreTypeError" messageLabel="Out"/>
+        </operation>
+
+        <!--assignment6 添加学生成绩-->
+        <operation name="addStudentScores"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="score:课程成绩列表"/>
+            <output messageLabel="Out" element="score:课程成绩列表"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:duplicateInsertScoreError" messageLabel="Out"/>
+        </operation>
+
+        <!--删除学生成绩-->
+        <operation name="deleteStudentScores"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   safe="true">
+            <input messageLabel="In" element="score:课程成绩列表"/>
+            <output messageLabel="Out" element="score:课程成绩列表"/>
+            <infault ref="error:invalidDataError" messageLabel="In"/>
+            <outfault ref="error:noFoundScoreTypeError" messageLabel="Out"/>
+        </operation>
+    </interface>
+
+</description>
